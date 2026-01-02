@@ -1,2 +1,5 @@
 # MindMapNote
 做笔记真的需要复杂的结构与花里胡哨的功能吗？我们的目的不是记录与思考吗？以json为主体构建mindmap，以markdown构建节点内容，在文件里也可以直接写，简单点，毕竟未来可能都需要喂给AI
+
+# 构建思路
+使用擅长的c#，mindmap和markdown应该渲染在一个'无限大'的画布上，这可以使用gpu渲染，或者使用具有canvas的库来做一个无限大的虚拟画布，markdown渲染使用markdig等库转为html然后使用markdig或者htmlrenderer渲染，其或许可以渲染成纹理来满足缩放，通过缓存纹理避免耗费太多cpu去实时解析渲染全部markdown，而只需要专注于实时解析和渲染正在编辑的markdown
